@@ -14,7 +14,8 @@ private:
     string streetName;
 public:
     //Defaults when creating a new object
-
+    HouseInfo(): streetNumber(0), housePrice(0), streetName("")
+    {};
 
     void getInfo(HouseInfo h[])
     {
