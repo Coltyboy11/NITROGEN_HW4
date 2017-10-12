@@ -31,6 +31,32 @@ public:
         }
 
     }
+    void comparePrices(HouseInfo h[]){
+        double h1,h2,h3;
+        for(int i = 0; i < 3; i++)
+        {
+            if(i == 0){
+                h1 = h[i].housePrice;
+            }
+            else if (i == 1){
+                h2 = h[i].housePrice;
+            }
+            else if(i == 2){
+                h3 = h[i].housePrice;
+            }
+        }
+        //This If statement is used so if 2 houses are the same price it will display both of them
+        if(h1<= h2&& h1<=h3){
+            cout<<"The First House is the cheapest"<<endl;
+        }
+        if(h2<=h1&&h2<=h3){
+            cout<<"The Second House is the cheapest"<<endl;
+        }
+        if(h3<=h1&&h3<=h2){
+            cout<<"The Third House is the cheapest"<<endl;
+        }
+    }
+
     void printInfo(HouseInfo h[])
     {
         cout << "Your market analysis is as follows: " << endl;
@@ -50,6 +76,8 @@ int main(void) {
     HouseInfo h[3];
     h1.getInfo(h);
     h1.printInfo(h);
+    h1.comparePrices(h);
+
 
     return 0;
 }
