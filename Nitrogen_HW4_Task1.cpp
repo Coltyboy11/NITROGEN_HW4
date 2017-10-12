@@ -24,8 +24,9 @@ public:
             cout << "Please enter info for house " << i+1 << endl;
             cout << "Enter the street number: " << endl;
             cin >> h[i].streetNumber;
+            cin.ignore();
             cout << "Enter the street name: " << endl;
-            cin >> h[i].streetName;
+            getline(cin, h[i].streetName);
             cout << "Enter the price of the house: " << endl;
             cin >> h[i].housePrice;
         }
