@@ -33,31 +33,7 @@ public:
         }
 
     }
-    void comparePrices(HouseInfo h[]){
-        double h1,h2,h3;
-        for(int i = 0; i < 3; i++)
-        {
-            if(i == 0){
-                h1 = h[i].housePrice;
-            }
-            else if (i == 1){
-                h2 = h[i].housePrice;
-            }
-            else if(i == 2){
-                h3 = h[i].housePrice;
-            }
-        }
-        //This If statement is used so if 2 houses are the same price it will display both of them
-        if(h1<= h2&& h1<=h3){
-            cout<<"The First House is the cheapest"<<endl;
-        }
-        if(h2<=h1&&h2<=h3){
-            cout<<"The Second House is the cheapest"<<endl;
-        }
-        if(h3<=h1&&h3<=h2){
-            cout<<"The Third House is the cheapest"<<endl;
-        }
-    }
+    void comparePrices(HouseInfo h[]);
 
     void printInfo(HouseInfo h[])
     {
@@ -84,3 +60,45 @@ int main(void) {
     return 0;
 }
 // Function Definitions
+void HouseInfo::comparePrices(HouseInfo h[])
+{
+        double h1,h2,h3;
+        for(int i = 0; i < 3; i++)
+        {
+            if(i == 0){
+                h1 = h[i].housePrice;
+            }
+            else if (i == 1){
+                h2 = h[i].housePrice;
+            }
+            else if(i == 2){
+                h3 = h[i].housePrice;
+            }
+        }
+        //This If statement is used so if 2 houses are the same price it will display both of them
+        if (h1 == h2 && h1 == h3)
+        {
+            cout << "They are all the same!" << endl;
+        }
+        else if (h1 == h2 && h1 < h3)
+        {
+            cout << "You should buy house 1 and 2" << endl;
+        }
+        else if (h2 == h3 && h2 < h1)
+        {
+            cout << "You should buy house 2 and 3" << endl;
+        }
+        else if (h1 == h3 && h1 < h2)
+        {
+            cout << "You should buy house 1 and 3" << endl;
+        }
+        else if(h1<= h2&& h1<=h3){
+            cout<<"The First House is the cheapest"<<endl;
+        }
+        else if(h2<=h1&&h2<=h3){
+            cout<<"The Second House is the cheapest"<<endl;
+        }
+        else if(h3<=h1&&h3<=h2){
+            cout<<"The Third House is the cheapest"<<endl;
+        }
+    }
